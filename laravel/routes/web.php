@@ -17,4 +17,4 @@ Route::get('/', 'AppController@home')
     -> name('home');
 
 Route::get('/movie/{id}', 'AppController@movie')
--> name('movie');
+    -> name('movie');
