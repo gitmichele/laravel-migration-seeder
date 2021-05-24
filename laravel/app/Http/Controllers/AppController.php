@@ -3,11 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Movie;
 
 class AppController extends Controller
 {
     public function home() {
 
-        dd('hw');
+        $movies = Movie::all();
+
+        return view('pages.home', compact('movies'));
+    }
+
+    public function movie($id) {
+
+        $movie = Movie::findOrFail($id);
+
+        return view('pages.movie', compact('movie'));
     }
 }
